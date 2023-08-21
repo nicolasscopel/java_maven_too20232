@@ -1,4 +1,4 @@
-package br.edu.ifsul.bcc.too.topico3.exercicios;
+package br.edu.ifsul.bcc.too.topico3.respostas;
 
 /**
  *
@@ -34,16 +34,69 @@ public class Exercicio1 {
             
             for(int coluna=0; coluna < rgDados1[linha].length; coluna++){
                 
-                System.out.println("Digite um valor: ");
+                System.out.print("Digite um valor: ");
                 if(sc.hasNext()){
                     // sc.next(); ...
                     int i = Integer.parseInt(sc.next());
+                    rgDados1[linha][coluna] = i;
+                    }
                     
                 }                
-            }                        
-        }       
+            }
+        System.out.println("\nMatriz 1");
+        
+        for (int linha=0; linha < rgDados1.length; linha++){
+            
+            for(int coluna=0; coluna < rgDados1[linha].length; coluna++){
+        
+        
+                System.out.print(rgDados1[linha][coluna]+ " ");
+                if(coluna == 2)
+                {
+                    System.out.println();
+                
+                }
+                
+                
+        }     
+        }
+        
+        System.out.println("\n");
+        
+        for (int linha=0; linha < rgDados2.length; linha++){
+            
+            for(int coluna=0; coluna < rgDados2[linha].length; coluna++){
+                
+                System.out.print("Digite um valor: ");
+                if(sc.hasNext()){
+                    // sc.next(); ...
+                    int i = Integer.parseInt(sc.next());
+                    rgDados2[linha][coluna] = i;
+                    }
+                    
+                }                
+            }
+        System.out.println("\nMatriz 2");
+        
+        for (int linha=0; linha < rgDados2.length; linha++){
+            
+            for(int coluna=0; coluna < rgDados2[linha].length; coluna++){
+        
+        
+                System.out.print(rgDados2[linha][coluna]+ " ");
+                if(coluna == 2)
+                {
+                    System.out.println();
+                
+                }
+                
+                
+        }     
+        }
 
         
     }
-    
 }
+    
+
+
