@@ -26,7 +26,15 @@ public class Exercicio4 {
             
            // System.out.println("Parametro/argumento recebido pela funcao main: " + args[2]);
             System.out.println("Primeiro Parametro: "+args[0]);
-             System.out.println("Segundo Parametro: "+args[1]);
+            System.out.println("Segundo Parametro: "+args[1]);
+            
+            Float p1 = Float.parseFloat(args[0]);
+            Float p2 = Float.parseFloat(args[1]);
+            
+            Float m = (p1 + p2) / 2f;
+                    
+            
+            System.out.println("Media dos valores digitados: "+m);
              
              
              
