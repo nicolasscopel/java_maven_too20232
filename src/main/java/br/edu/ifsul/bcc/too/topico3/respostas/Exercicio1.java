@@ -50,7 +50,7 @@ public class Exercicio1 {
             for(int coluna=0; coluna < rgDados1[linha].length; coluna++){
         
         
-                System.out.print(rgDados1[linha][coluna]+ " ");
+                System.out.print(rgDados1[linha][coluna]+ "\t");
                 if(coluna == 2)
                 {
                     System.out.println();
@@ -83,7 +83,7 @@ public class Exercicio1 {
             for(int coluna=0; coluna < rgDados2[linha].length; coluna++){
         
         
-                System.out.print(rgDados2[linha][coluna]+ " ");
+                System.out.print(rgDados2[linha][coluna]+ "\t");
                 if(coluna == 2)
                 {
                     System.out.println();
@@ -94,11 +94,46 @@ public class Exercicio1 {
         }     
         }
         
-        System.out.print(rgDados2[0][0]+ rgDados1[0][0]);
+        System.out.println("\n");
+        
+        for (int linha=0; linha < rgDados3.length; linha++){
+            
+            for(int coluna=0; coluna < rgDados3[linha].length; coluna++){
+                
+                
+                    
+                    rgDados3[linha][coluna] = rgDados1[linha][coluna] + rgDados2[linha][coluna];
+                    }
+                    
+                }    
+        
+        System.out.println("\nMatriz 3");
+        
+        for (int linha=0; linha < rgDados3.length; linha++){
+            
+            for(int coluna=0; coluna < rgDados3[linha].length; coluna++){
+        
+        
+                System.out.print(rgDados3[linha][coluna]+ "\t");
+                if(coluna == 2)
+                {
+                    System.out.println();
+                
+                }
+                
+                
+        }     
+        }
+        
+        
+        
+        
+            }
+        
+        
 
         
     }
-}
-    
 
+    
 
