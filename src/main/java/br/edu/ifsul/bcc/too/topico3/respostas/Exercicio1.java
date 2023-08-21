@@ -93,6 +93,8 @@ public class Exercicio1 {
                 
         }     
         }
+        
+        System.out.print(rgDados2[0][0]+ rgDados1[0][0]);
 
         
     }
