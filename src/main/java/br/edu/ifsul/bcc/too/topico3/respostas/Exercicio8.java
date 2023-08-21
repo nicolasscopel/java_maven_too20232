@@ -1,5 +1,5 @@
 
-package br.edu.ifsul.bcc.too.topico3.exercicios;
+package br.edu.ifsul.bcc.too.topico3.respostas;
 
 /**
  *
