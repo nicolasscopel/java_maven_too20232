@@ -37,6 +37,8 @@ public class Exercicio1 {
                 System.out.println("Digite um valor: ");
                 if(sc.hasNext()){
                     // sc.next(); ...
+                    int i = Integer.parseInt(sc.next());
+                    
                 }                
             }                        
         }       
