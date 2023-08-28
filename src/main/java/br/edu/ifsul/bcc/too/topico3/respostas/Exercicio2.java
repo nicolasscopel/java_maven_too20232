@@ -51,7 +51,7 @@ public class Exercicio2 {
                     }
                        
                    }catch(NumberFormatException e){
-                       System.out.println("Erro" +e.getLocalizedMessage()+ "tente novamente");
+                       System.out.println("Erro: " +e.getLocalizedMessage()+ " tente novamente");;
                        
                    }
                    

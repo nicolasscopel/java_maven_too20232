@@ -1,6 +1,7 @@
 
 package br.edu.ifsul.bcc.too.topico3.respostas;
 import javax.swing.JOptionPane;
+import java.util.Scanner;
 
 /**
  * @author Telmo Júnior
@@ -9,7 +10,7 @@ public class Exercicio3 {
     
     public static void main(String[] args) {
 
-        int[][] rgDados1 = new int[2][3];//linha e coluna - se a quantidade de coluna da primeira
+        int[][] rgDados1 = new int[3][3];//linha e coluna - se a quantidade de coluna da primeira
 
         int[][] rgDados2 = new int[3][2];//for igual a quantida de linha da segunda.
 
@@ -23,13 +24,35 @@ public class Exercicio3 {
                              https://brasilescola.uol.com.br/matematica/multiplicacao-matrizes.htm
         */
         
-        for (int linha=0; linha < rgDados1.length; linha++){
+        Scanner sc = new Scanner(System.in);
+        
+        for (int linha=0; linha < rgDados1.length; linha++)
+        {
             
-            for(int coluna=0; coluna < rgDados1[linha].length; coluna++){
+            for(int coluna=0; coluna < rgDados1[linha].length; coluna++)
+            {
                                 
                 String d = JOptionPane.showInputDialog(null, "Informe um valor inteiro:", "Informe", JOptionPane.PLAIN_MESSAGE);
-                                
-                rgDados1[linha][coluna] = Integer.parseInt(d);
+                 // entrada de dados showInputDialog  
+                 
+                 
+                 
+                 if(d == null)
+                 { 
+                     System.out.println("Erro na leitura");
+                     coluna --;
+                 }
+                 else
+                 {
+                     rgDados1[linha][coluna] = Integer.parseInt(d);
+                 }
+                 
+                 
+                 
+                 
+                 
+                 
+                //rgDados1[linha][coluna] = Integer.parseInt(d);
                                 
             }                        
         } 
