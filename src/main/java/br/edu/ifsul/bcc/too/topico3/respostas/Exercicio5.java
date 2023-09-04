@@ -97,8 +97,9 @@ public class Exercicio5 {
         
         String letras = "abcadefghijklmcopqrsdeftuv";
         //TESTA indexOf PARA LOCALIZAR UM CARACTERE EM UM STRING
-        System.out.printf("Último 'c' está localizado no index %d\n", letras.indexOf('c'));
-        System.out.printf("Último 'a' está localizado no index %d \n", letras.indexOf('a', 1));// 1 é o indice a aprtir de onde deve procurar
+        System.out.printf("Primeiro 'c' está localizado no index %d\n", letras.indexOf('c'));
+        System.out.printf("Primeiro 'ç' está localizado no index %d\n", letras.indexOf('ç')); // -1 POIS NOA TEM Ç
+        System.out.printf("Primeiro 'a' a partir do INDEX 1 está localizado no index %d \n", letras.indexOf('a', 1));// 1 é o indice a aprtir de onde deve procurar
         
         
         
@@ -109,6 +110,8 @@ public class Exercicio5 {
         
         String nome = "01234567";
         System.out.println("String : " + nome);
+        
+        
 
         String substring = nome.substring(5); // exclui os elementos de 0 - 4 e pega a partir do 5
         System.out.println("String depois da 5º index: " + "["+substring+"]");
@@ -126,7 +129,7 @@ public class Exercicio5 {
         System.out.println("7) Médoto replace");
         // Retorna um novo objeto contendo a string original com um trecho especificado substituído por outra expressão indicada.
         
-        String metodo7 = "mesquita";
+        String metodo7 = "mesquite";
         System.out.println(metodo7);
         String nomeAlterado = metodo7.replace('e', 'o'); // SUBSTITUI APENAS UM CHAR
         System.out.println(nomeAlterado);
@@ -148,18 +151,19 @@ public class Exercicio5 {
         System.out.println("9) Médoto compareto");
         //Esse método pode retornar 0 se as strings forem iguais, um número negativo se a string que invoca o compareTo for menor que a string que é passada como um argumento e 
         //um número positivo se a string que invoca o compareTo for maior que a string que é passada como argumento.
+        // COMPARA A ORDEM ALFABÉTICA
         
         String nome1 = "Carlos";
-        String nome2 = "Carla";
+        String nome2 = "Carlas";
         String nome3 = "Carlos";
 
-        System.out.println("nome2.compareTo(nome1) = "+nome2.compareTo(nome1)); // NEGATIVO POIS CARLA É MENOR QUE CARLOS
-        System.out.println("nome1.compareTo(nome2) = "+nome1.compareTo(nome2)); // POSITIVO POIS CARLOS É MAIOR QUE CARLA
+        System.out.println("nome2.compareTo(nome1) = "+nome2.compareTo(nome1)); // NEGATIVO POIS CARLA É MENOR QUE CARLOS   A VEM ANTES DO O
+        System.out.println("nome1.compareTo(nome2) = "+nome1.compareTo(nome2)); // POSITIVO POIS CARLOS É MAIOR QUE CARLA   O VEM DEPOIS DO A
         System.out.println("nome2.compareTo(nome3) = "+nome1.compareTo(nome3)); // 0 POIS SÃO IGUAIS
         
         
         String texto = "A API de Strings é uma das mais utilizadas na linguagem Java";
-        String linguagem = texto.substring(texto.indexOf("Java"), texto.length());
+        String linguagem = texto.substring(texto.indexOf("Java"), texto.length());  // COPIANDO COM 
         
         
         //COMPARETOIGNORECASE IGNORA LETRAS MAIÚSCULAS OU MINÚSCULAS COMPARA APENAS LETRAS
@@ -187,7 +191,7 @@ public class Exercicio5 {
         //Exercicio5 e_5 = new Exercicio5();//objeto da classe   || cria e inicializa o e_5
         e5.manipulaString();//chamada do metodo a partir do objeto.
 
-        //new Exercicio5(); // criação da instancia se atribuição
+        //new Exercicio5(); // criação da instancia sem atribuição
     }
 
 }
