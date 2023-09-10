@@ -43,7 +43,14 @@ public class ManipulacaoStrings {
         System.out.println("Tamanho do vetor: " + tam);
         
         for(int i = 0; i < tam; i++){
-        
+        try{
+            Integer item = Integer.parseInt(meuVetor[i]);
+            System.out.println(item);
+
+            
+        }catch(NumberFormatException e){
+            System.out.println("-");
+        }
             
             
         }
