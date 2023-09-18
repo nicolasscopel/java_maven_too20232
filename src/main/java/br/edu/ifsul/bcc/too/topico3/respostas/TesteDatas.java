@@ -37,6 +37,8 @@ public class TesteDatas  {
         System.out.println(data_formatada);//IMPRIME A DATA FORMATADA
 
         System.out.println("Data em milisegundos: " + dataCalendar.getTimeInMillis());
+        
+        
 
         dataDate = new Date(); //INICIALIZAÇÃO DO ATRIBUTO
 
@@ -73,6 +75,7 @@ public class TesteDatas  {
         // EXERCICIO 2: UTILIZAR O MÉTODO COMPARETO DA CLASSE Calendar para testar duas datas e explicar os retornos -1, 0, 1
         System.out.println("Data Maior   - retorno 1: " + dataDate.compareTo(dataCalendar.getTime()));
         System.out.println("Datas Iguais - retorno 0: " + dataDate.compareTo(dataDate));
+        
         //System.out.println("Data Menor - retorno -1: "+ dataCalendar.compareTo(dataDate));
         //converter de java.util.date para java.util.Calendar
                
@@ -80,26 +83,23 @@ public class TesteDatas  {
 
         //EXERCICIO 3: CONVERTER A STRING "25/09/1983" PARA java.util.Calendar
         
-         String dataStringCalendar = "25/09/1983"; // Exemplo de formato: dia/mês/ano
-
-        // Defina o formato da string de data
-        SimpleDateFormat formatoCalendar = new SimpleDateFormat("dd/MM/yyyy");
-
+        
+        
         try {
             // Parse a string para um objeto Date
-            Date data = formatoCalendar.parse(dataStringCalendar);
+            Date dt = formatador.parse("25/09/1983");
 
             // Crie um objeto Calendar
-            Calendar calendar = Calendar.getInstance();
+            Calendar calendar_date = Calendar.getInstance();
 
             // Defina a data no objeto Calendar
-            calendar.setTime(data);
+            calendar_date.setTime(dt);
 
             // Agora você tem a data em formato Calendar
-            System.out.println("Data em formato Calendar: " + calendar.getTime());
-        } catch (Exception e) {
+            System.out.println("Data em formato Calendar: " + calendar_date.getTime());
+        } catch (ParseException e) {
             // Trate exceções de análise aqui, como ParseException
-            e.printStackTrace();
+            System.out.println("Erro");
         }
        
 
@@ -107,29 +107,20 @@ public class TesteDatas  {
         
         //EXERCICIO 4: CONVERTER A STRING "25/09/1983" PARA java.util.Date
         
-        String dataString = "25/09/1983"; // Exemplo de formato: dia/mês/ano
-
-        // Defina o formato da string de data
-        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-
         try {
             // Parse a string para um objeto Date
-            Date data2 = formato.parse(dataString);
+            Date data2 = formatador.parse("25/09/1983");
 
             // Agora você tem a data em formato Date
             
             System.out.println("Data em formato Date: " + data2);
             
             
-        } catch (Exception e) {
+        } catch (ParseException e) {
             // Trate exceções de análise aqui, como ParseException
            
-        }
-        
-           
-        
-       
-        
+        }   
+            
     }
 
     public static void main(String[] args) throws ParseException{
