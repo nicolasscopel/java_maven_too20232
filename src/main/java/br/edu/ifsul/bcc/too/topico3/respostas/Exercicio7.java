@@ -11,6 +11,7 @@ import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
+
 /**
  *
  * @author telmo
@@ -18,18 +19,10 @@ import java.util.TreeSet;
 public class Exercicio7 {
 
     Exercicio7() {
-        
-       
         exer71();// chama o método exer71.
 
-        exer72();//chama o método exer72.
-        
-
-
+        exer72();//chama o método exer72.             
     }
-    
-   
-    
 
     public class Carro {
 
@@ -40,7 +33,7 @@ public class Exercicio7 {
         private Double valorDeMercadoCarro;
 
         // Construtor público para inicializar os atributos
-            public Carro(String nome, String modelo, String fabricante, String numeroChassi, double valorDeMercado) {
+        public Carro(String nome, String modelo, String fabricante, String numeroChassi, double valorDeMercado) {
             this.nomeCarro = nome;
             this.modeloCarro = modelo;
             this.fabricanteCarro = fabricante;
@@ -55,89 +48,86 @@ public class Exercicio7 {
         }
 
     }
-    
-    public void metodoCarro(){
-        
+
+    public void metodoCarro() {
+
         Map<Integer, Carro> carros = new HashMap();
-    
+
         // Criando e inicializando cinco objetos da classe Carro
         Carro carro1 = new Carro("Gol", "2023", "Volkswagen", "56DF234DF", 25000.0);
         Carro carro2 = new Carro("Saveiro", "2019", "Volkswagen", "463DF123", 30000.0);
         Carro carro3 = new Carro("Amarok", "2024", "Volkswagen", "7824FOL", 20000.0);
         Carro carro4 = new Carro("Jetta", "2012", "Volkswagen", "924DFG5", 35000.0);
         Carro carro5 = new Carro("Golf", "2015", "Volkswagen", "873DFSH23", 28000.0);
-        
-         // Adicionando os carros à lista de carros
+
+        // Adicionando os carros à lista de carros
         carros.put(0, carro1);
         carros.put(1, carro2);
         carros.put(2, carro3);
         carros.put(3, carro4);
         carros.put(4, carro5);
-        
+
         // Imprimindo a listagem de carros
         for (Map.Entry<Integer, Carro> entry : carros.entrySet()) {
             System.out.println("Chave: " + entry.getKey() + ", " + entry.getValue());
         }
-        
+
     }
+
     
     public class Pneu {
-        
+
         private String codigoPneu;
         private String modeloPneu;
         private String posicaoPneu;
         private String medidaPneu;
         private String fabricantePneu;
         private String valorPneu;
-        
+
         //Construtor público para inicializar os atributos
-        public Pneu(String codigo, String modelo, String posicao, String medida, String fabricante, String valor){
+        public Pneu(String codigo, String modelo, String posicao, String medida, String fabricante, String valor) {
             this.codigoPneu = codigo;
             this.modeloPneu = modelo;
             this.posicaoPneu = posicao;
             this.medidaPneu = medida;
             this.fabricantePneu = fabricante;
             this.valorPneu = valor;
-            
+
         }
-        
+
         @Override
-        public String toString(){
-            return "Código: " + this.codigoPneu + " Modelo: " + this.modeloPneu; 
-            
+        public String toString() {
+            return "Código: " + this.codigoPneu + " Modelo: " + this.modeloPneu;
+
         }
         
         
+
     }
-    
-    
-    
-    
-    public void metodoPneu(){
-        
-        List<Pneu> lista = new ArrayList();
-        
+
+    public void metodoPneu() {
+
+        java.util.List<Pneu> list = new ArrayList();
+
         Pneu a = new Pneu("1", "Radial", "Overside", "195/55", "Bridgestone", "399,00");
-        lista.add(a);
-         Pneu b = new Pneu("2", "Verde", "Overside", "175/65", "Michelin", "599,00");
-        lista.add(b);
-         Pneu c = new Pneu("3", "Misto", "Overside", "185/45", "Continental", "349,00");
-        lista.add(c);
-         Pneu d = new Pneu("4", "Carga", "Overside", "175/55", "Pireli", "499,00");
-        lista.add(d);
+        list.add(a);
+        Pneu b = new Pneu("2", "Verde", "Overside", "175/65", "Michelin", "599,00");
+        list.add(b);
+        Pneu c = new Pneu("3", "Misto", "Overside", "185/45", "Continental", "349,00");
+        list.add(c);
+        Pneu d = new Pneu("4", "Carga", "Overside", "175/55", "Pireli", "499,00");
+        list.add(d);
         
-        System.out.println(lista);//antes
-        
-        
-        
-        
-        
-         System.out.println(lista);//antes
-        
-        
+        System.out.println(list);//antes
+
+
+        for (Pneu i : list) {
+            System.out.println(i);
+        }
+
     }
-    
-    
+
+  
 
     private void exer71() {
 
@@ -174,11 +164,10 @@ public class Exercicio7 {
     public static void main(String[] args) {
 
         new Exercicio7();
-        
+
         new Exercicio7().metodoCarro();
         new Exercicio7().metodoPneu();
-        
-        
+
     }
 
 }
