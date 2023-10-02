@@ -42,6 +42,11 @@ class Compra {
     public int getQuantidade() {
         return quantidade;
     }
+    
+    @Override
+        public String toString() {
+            return "Código: " + this.codigo + ", Data: " + this.emissao;
+        }
 }
 
 public class Exercicio8 {

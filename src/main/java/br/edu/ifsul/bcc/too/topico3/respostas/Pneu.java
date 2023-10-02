@@ -54,5 +54,11 @@ public class Pneu implements Comparable<Pneu> {
     //o metodo toString pertence a classe java.lang.Object.
     //polimorfismo: alteração de forma (sobreescrita de método).
     
+    @Override
+        public String toString() {
+            return "Código: " + this.codigo + " Modelo: " + this.modelo;
+
+        }
+    
    
 }

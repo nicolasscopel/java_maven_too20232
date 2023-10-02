@@ -10,6 +10,8 @@ import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.TreeSet;
+import br.edu.ifsul.bcc.too.topico3.respostas.Pneu;
+import br.edu.ifsul.bcc.too.topico3.respostas.Carro;
 
 
 /**
@@ -24,30 +26,7 @@ public class Exercicio7 {
         exer72();//chama o método exer72.             
     }
 
-    public class Carro {
-
-        private String nomeCarro;
-        private String modeloCarro;
-        private String fabricanteCarro;
-        private String numeroDoChassiCarro;
-        private Double valorDeMercadoCarro;
-
-        // Construtor público para inicializar os atributos
-        public Carro(String nome, String modelo, String fabricante, String numeroChassi, double valorDeMercado) {
-            this.nomeCarro = nome;
-            this.modeloCarro = modelo;
-            this.fabricanteCarro = fabricante;
-            this.numeroDoChassiCarro = numeroChassi;
-            this.valorDeMercadoCarro = valorDeMercado;
-        }
-
-        // Sobrescreva o método toString para retornar o código e modelo
-        @Override
-        public String toString() {
-            return "Código: " + this.numeroDoChassiCarro + ", Modelo: " + this.modeloCarro;
-        }
-
-    }
+    
 
     public void metodoCarro() {
 
@@ -74,59 +53,40 @@ public class Exercicio7 {
 
     }
 
-    
-    public class Pneu {
-
-        private String codigoPneu;
-        private String modeloPneu;
-        private String posicaoPneu;
-        private String medidaPneu;
-        private String fabricantePneu;
-        private String valorPneu;
-
-        //Construtor público para inicializar os atributos
-        public Pneu(String codigo, String modelo, String posicao, String medida, String fabricante, String valor) {
-            this.codigoPneu = codigo;
-            this.modeloPneu = modelo;
-            this.posicaoPneu = posicao;
-            this.medidaPneu = medida;
-            this.fabricantePneu = fabricante;
-            this.valorPneu = valor;
-
-        }
-
-        @Override
-        public String toString() {
-            return "Código: " + this.codigoPneu + " Modelo: " + this.modeloPneu;
-
-        }
-        
-        
-
-    }
-
     public void metodoPneu() {
 
         java.util.List<Pneu> list = new ArrayList();
 
         Pneu a = new Pneu("1", "Radial", "Overside", "195/55", "Bridgestone", "399,00");
         list.add(a);
-        Pneu b = new Pneu("2", "Verde", "Overside", "175/65", "Michelin", "599,00");
+        Pneu b = new Pneu("2", "Carga", "Overside", "175/65", "Michelin", "599,00");
         list.add(b);
         Pneu c = new Pneu("3", "Misto", "Overside", "185/45", "Continental", "349,00");
         list.add(c);
-        Pneu d = new Pneu("4", "Carga", "Overside", "175/55", "Pireli", "499,00");
+        Pneu d = new Pneu("4", "Verde", "Overside", "175/55", "Pireli", "499,00");
         list.add(d);
         
+        System.out.println("Ordenado como foi informado: ");
         System.out.println(list);//antes
-
-
-        for (Pneu i : list) {
-            System.out.println(i);
-        }
+        
+        Collections.sort(list);
+        System.out.println("Ordenado pela ordem decrescente: ");
+        System.out.println(list);//depois
 
     }
 
+    public void metodoCarroPneu(){
+        
+         Carro c = new Carro("Gol", "2023", "Volkswagen", "56DF234DF", 25000.0);
+          
+          Pneu p1 = new Pneu("1", "Radial", "Overside", "195/55", "Bridgestone", "399,00");
+          Pneu p2 = new Pneu("2", "Carga", "Overside", "175/65", "Michelin", "599,00");
+          Pneu p3 = new Pneu("3", "Misto", "Overside", "185/45", "Continental", "349,00");
+          Pneu p4 = new Pneu("4", "Verde", "Overside", "175/55", "Pireli", "499,00");
+          
+         // c.setPneu(p);
+        
+    }
   
 
     private void exer71() {
@@ -167,6 +127,7 @@ public class Exercicio7 {
 
         new Exercicio7().metodoCarro();
         new Exercicio7().metodoPneu();
+        new Exercicio7().metodoCarroPneu();
 
     }
 
