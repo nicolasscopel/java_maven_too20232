@@ -45,6 +45,8 @@ public class Questao2 {
                         d[i].indexOf(","));
                 String data = d[i].substring(d[i].indexOf(":",
                         d[i].indexOf(",")) + 2, d[i].indexOf("'}"));
+                
+                //CONVERTER PARA INTEGER E PARA CALENDAR E COLOCAR NO MAPDADOS
 
             } catch (Exception e) {
                 e.printStackTrace();
