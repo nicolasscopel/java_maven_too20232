@@ -25,10 +25,10 @@ public class ConversoesDatas {
     ConversoesDatas(){
         
          //testesInicializacao();
-         //testesImpressao();
+         testesImpressao();
          //testesConversao();
          //testesComparacao();        
-           imprimeData();
+           //imprimeData();
         
     }
     

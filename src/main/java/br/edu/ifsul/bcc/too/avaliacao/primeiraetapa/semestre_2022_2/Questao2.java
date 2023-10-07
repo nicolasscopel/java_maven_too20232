@@ -5,6 +5,8 @@
 package br.edu.ifsul.bcc.too.avaliacao.primeiraetapa.semestre_2022_2;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,19 +27,24 @@ import java.util.Map;
 public class Questao2 {
 
     private Map<Integer, java.util.Calendar> mapDados = new HashMap();
-    private String dadosString = "{codigo:10, data:'2022-01-31'}; {codigo:20, data:'1999-10-1'};{codigo:30, data:'1994-06-15'}";
     
-    private SimpleDateFormat formatadordata;
+    private String dadosString = "{codigo:10, data:'2022-01-31'}; {codigo:20, data:'1999-10-1'};{codigo:30, data:'1994-06-15'}";
+    private SimpleDateFormat formatador = new SimpleDateFormat ("yyyy-MM-dd");
+    private Calendar calendar = Calendar.getInstance();
+    
+
 
     public Questao2() {
 
         manipulacaoStrings();
+        arrumaData();
     }
 
     private void manipulacaoStrings() {
 
         String d[] = dadosString.split(";");
         int i = 0;
+        
         while (i < d.length) {
 
             try {
@@ -47,6 +54,12 @@ public class Questao2 {
                         d[i].indexOf(",")) + 2, d[i].indexOf("'}"));
                 
                 //CONVERTER PARA INTEGER E PARA CALENDAR E COLOCAR NO MAPDADOS
+                
+                calendar.setTime(formatador.parse(data));
+                // é preciso clonar o calendário, pois o mapa armazena referências dos objetos 
+                // e não cópias, assim, todas as entradas no mapa estão se referindo à mesma instância
+                mapDados.put(Integer.valueOf(codigo), (Calendar)calendar.clone());
+                
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -55,9 +68,18 @@ public class Questao2 {
             i++;
         }
     }
+         // formatador.parse = pega uma (string de data) e converte pra (date) 
+         // formatador.format = pegar um (date) e converte pra (string de data) 
     
     private void arrumaData(){
-        formatadordata = new SimpleDateFormat ("dd/mm/yyyy");
+        
+         formatador = new SimpleDateFormat("dd/MM/yyyy");
+         
+         for(Map.Entry<Integer, Calendar> m : mapDados.entrySet()){
+             System.out.println("Código:"+ m.getKey() + " Data: "+ formatador.format(m.getValue().getTime()));
+             
+         }
+      
     }
 
     public static void main(String args[]) {
@@ -65,3 +87,24 @@ public class Questao2 {
     }
 
 }
+
+/*
+public class TransformarFormatoData {
+    public static String transformarFormatoData(String dataStr) throws ParseException {
+
+        // Crie um objeto SimpleDateFormat para analisar a string de data original
+        SimpleDateFormat dateFormatOriginal = new SimpleDateFormat("yyyy/MM/dd");
+
+        // Crie um objeto SimpleDateFormat para formatar a nova string de data
+        SimpleDateFormat dateFormatNovo = new SimpleDateFormat("dd/MM/yyyy");
+
+        // Parse a string de data original para um objeto Date
+        Date data = dateFormatOriginal.parse(dataStr);
+
+        // Formate a data como uma nova string no formato "dd/MM/yyyy"
+        String novaDataStr = dateFormatNovo.format(data);
+
+        return novaDataStr;
+    }
+
+*/
