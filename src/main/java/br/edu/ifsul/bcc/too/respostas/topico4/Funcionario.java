@@ -5,6 +5,7 @@
 package br.edu.ifsul.bcc.too.respostas.topico4;
 
 import java.util.Calendar;
+import java.util.Collection;
 
 /**
  *
@@ -19,15 +20,20 @@ public class Funcionario extends Pessoa {
     private Calendar data_admissao;
     // atributo STRING numero_ctps e CALENDAR data de admissao
 
+    // o funcionario poderia estar vinculado com vários cursos
+    // um curso pode estar vinculado a nenhum ou a vários funcionários
+    private Collection<CursoAprimoramento> cursos;
+    
     public Funcionario() {
     }
 
-    public Funcionario(String numero_ctps, Calendar data_de_emissao) {
-        this.numero_ctps = numero_ctps;
-        this.data_admissao = data_de_emissao;
-    }
 
-    
+    public Funcionario(String numero_ctps, Calendar data_admissao, Collection<CursoAprimoramento> cursos) {
+        this.numero_ctps = numero_ctps;
+        this.data_admissao = data_admissao;
+        this.cursos = cursos;
+    }
+  
     
     public String getNumero_ctps() {
         return numero_ctps;
@@ -44,6 +50,17 @@ public class Funcionario extends Pessoa {
     public void setData_admissao(Calendar data_admissao) {
         this.data_admissao= data_admissao;
     }
+
+    public Collection<CursoAprimoramento> getCursos() {
+        return cursos;
+    }
+
+    public void setCursos(Collection<CursoAprimoramento> cursos) {
+        this.cursos = cursos;
+    }
+
+  
+    
     
     
     

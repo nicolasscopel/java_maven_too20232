@@ -28,11 +28,6 @@ public class Cliente extends Pessoa {
         this.observacoes = observacoes;
     }
 
-   
-
-    
-    
-    
     
     public Calendar getData_ultima_compra() {
         return data_ultima_compra;

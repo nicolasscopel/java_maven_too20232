@@ -4,11 +4,16 @@
  */
 package br.edu.ifsul.bcc.too.respostas.topico4;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -29,11 +34,19 @@ public class Exercicio {
     - Criar um método que retorne a colecao Pessoa
     - Essa coleção devera ter 5 pessoas (1 func, 2 cliente e 2 aluno);
     */
+         
+    /*
+         Criar um método que gere um cliente (obter dados via JOptionPane)
+         Criar um método que gere um produto (obter dados via JOptionPane)
+         Criar um método que gere uma foto (obter dados via JOptionPane)
+         Criar um método que gere um pedido (cliente,produto e foto)
+         Criar um método que imprima um pedido (todas as informações)
+         */
     
     public Exercicio() {
-        getPessoas();
-        imprimePessoa(cltP);
-        
+        //getPessoas();
+        //imprimePessoa(cltP);
+        Exercicio3();
     }
     
     private Collection<Pessoa> getPessoas(){
@@ -140,8 +153,52 @@ public class Exercicio {
     }
     
     
+    private void Exercicio3(){
+        Cliente c = generateCliente();
+        Produto p = null;
+        Foto f = null;
+        Pedido pd = null;
+        imprimePedido(pd);
+      
+    }
+    
+    
+    
+    private Cliente generateCliente(){
+        
+        Cliente cli = new Cliente();
+        String cpf = JOptionPane.showInputDialog("Informe o CPF:");
+        cli.setCpf(cpf);
+        String nome = JOptionPane.showInputDialog("Informe o Nome:");
+        cli.setNome(nome);
+        String numero = JOptionPane.showInputDialog(null,"Numero", "Informe o Numero:", JOptionPane.PLAIN_MESSAGE);
+        cli.setNumero(Integer.parseInt(numero));
+        String peso = JOptionPane.showInputDialog(null,"Peso: ", "Informe o Peso:",JOptionPane.PLAIN_MESSAGE);
+        cli.setPeso(Float.parseFloat(peso));
+        
+        String datanasc = JOptionPane.showInputDialog("Informe a data de Nasc dd/MM/yyyy");
+        Calendar dataNascimento = Calendar.getInstance();
+        
+            try {
+                dataNascimento.setTime(sdf.parse(datanasc));
+                
+            } catch (ParseException ex) {
+                Logger.getLogger(Exercicio.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            cli.setDataNasc(dataNascimento);
+        
+        //System.out.println(sdf.format(cli.getDataNasc().getTime()));
+        
+        return null;
+    }
+    
+    private void imprimePedido(Pedido p){
+        System.out.println(p);
+    }
+    
     public static void main(String[] args){
 
         new Exercicio(); //CRIAÇÃO DA INSTANCIA
+ 
     }
 }
