@@ -4,6 +4,7 @@
  */
 package br.edu.ifsul.bcc.too.respostas.topico4;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
 
@@ -18,9 +19,9 @@ public class Pedido {
     private Integer codigo;
     private Calendar data;
     private Float valor_total;
-    private Cliente cliente;
+    private Cliente cliente; //associação
     
-    private Collection<Produto> produtos;
+    private Collection<Produto> produtos; // agregação
 
     public Pedido() {
     }
@@ -75,6 +76,26 @@ public class Pedido {
         this.produtos = produtos;
     }
     
+    public void setProduto(Produto produto){
+        if(this.produtos == null){
+            this.produtos = new ArrayList();
+        }
+        this.produtos.add(produto);
+    }
+    
+    @Override
+    public String toString(){
+        
+        // System.out.println(this.getCliente());
+        // System.out.println(this.getProdutos());
+        // String retorno = new String();
+        // retorno = this.getCliente().getCpf() + "  " + this.getCodigo();
+        // return retorno;
+        this.getCliente();
+        this.getProdutos();
+        
+        return null;
+    }
     
     
     

@@ -4,6 +4,7 @@
  */
 package br.edu.ifsul.bcc.too.respostas.topico4;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 /**
@@ -95,6 +96,16 @@ public class Pessoa {
     
     public Calendar getDataNasc() {
         return dataNasc;
+    }
+    
+     public String getDataNasc_string() {
+         if(this.dataNasc != null){
+             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+             return sdf.format(this.dataNasc.getTime());
+         }else{
+             return null;
+         }
+                 
     }
 
     public void setDataNasc(Calendar dataNasc) {

@@ -146,8 +146,9 @@ public class Exercicio {
     private void Exercicio3() {
         Cliente c = generateCliente();
         Produto p = generateProduto();
-        Foto f = generateFoto();
-        Pedido pd = generatePedido();
+        Foto f = generateFoto(p);
+        Pedido pd = generatePedido(c,p);
+
         imprimePedido(pd);
 
     }
@@ -209,7 +210,7 @@ public class Exercicio {
         return prod;
     }
 
-    private Foto generateFoto(){
+    private Foto generateFoto(Produto produto){
         
         Foto ft = new Foto();
         
@@ -222,11 +223,12 @@ public class Exercicio {
         String path = JOptionPane.showInputDialog(null, "Path","Informe o Path da Foto",JOptionPane.PLAIN_MESSAGE);
         ft.setPath(path);
         
+        ft.setProduto(produto);
         
         return ft;
     }
     
-    private Pedido generatePedido(){
+     private Pedido generatePedido(Cliente cliente, Produto produto){
         
         Pedido pd = new Pedido();
         
@@ -248,19 +250,32 @@ public class Exercicio {
         String valor = JOptionPane.showInputDialog(null, "Valor Total","Informe o Valor Total do Pedido",JOptionPane.PLAIN_MESSAGE);
         pd.setValor_total(Float.parseFloat(valor));
         
+        pd.setProduto(produto);
+        
         
         
         return pd;
         
     }
     
-    
-    
+   
     
     
     
     private void imprimePedido(Pedido p) {
-        System.out.println(p.getCliente() + " " + p.getValor_total());
+            
+          //System.out.println(p);
+            
+            
+        System.out.println("CPF: " + p.getCliente().getCpf());
+        System.out.println("Data" + p.getCliente().getDataNasc_string());
+        for(Produto pdt : p.getProdutos()){
+            System.out.println("Produto:" + pdt.getId());
+            //System.out.println(""+pdt.getFotos());
+            for(Foto ft : pdt.getFotos()){
+                System.out.println("Codigo: "+ft.getCodigo());
+            }
+        }
     }
 
     public static void main(String[] args) {
