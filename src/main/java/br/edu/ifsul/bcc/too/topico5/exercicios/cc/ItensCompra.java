@@ -15,16 +15,21 @@ public class ItensCompra {
     private Float valor;
     
     private Compra compra;
+    
+    private Artefato artefato;
 
     public ItensCompra() {
     }
 
-    public ItensCompra(Integer id, String quantidade, Float valor, Compra compra) {
+    public ItensCompra(Integer id, String quantidade, Float valor, Compra compra, Artefato artefato) {
         this.id = id;
         this.quantidade = quantidade;
         this.valor = valor;
         this.compra = compra;
+        this.artefato = artefato;
     }
+
+    
 
     public Integer getId() {
         return id;
@@ -56,6 +61,14 @@ public class ItensCompra {
 
     public void setCompra(Compra compra) {
         this.compra = compra;
+    }
+
+    public Artefato getArtefato() {
+        return artefato;
+    }
+
+    public void setArtefato(Artefato artefato) {
+        this.artefato = artefato;
     }
     
     
