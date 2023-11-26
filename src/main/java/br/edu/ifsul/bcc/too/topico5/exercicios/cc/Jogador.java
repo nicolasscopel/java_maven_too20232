@@ -4,6 +4,7 @@
  */
 package br.edu.ifsul.bcc.too.topico5.exercicios.cc;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
 
@@ -93,6 +94,13 @@ public class Jogador {
 
     public void setPatente(Collection<Patente> patente) {
         this.patente = patente;
+    }
+    
+    public void setPatente(Patente patente) {
+        if(this.patente == null){
+            this.patente = new ArrayList();
+        }
+        this.patente.add(patente);
     }
 
     public Collection<Compra> getCompra() {
