@@ -25,7 +25,11 @@ public class Exercicio12 {
         //BOLINHA VERDE - PUBLIC
         
         
-        inicializaListJogadores();
+        Collection<Jogador> j = inicializaListJogadores();
+        
+        imprimeListJogadores(j);
+        
+        //imprimeListJogadores(inicializaListJogadores());
 
     }
     /*
@@ -37,41 +41,69 @@ public class Exercicio12 {
     dua patentes. Em seguida, imprima na saída padrão, os jogadores
     com seus respectivos artefatos e patentes.
     */
-    private List<Object> inicializaListJogadores(){  
+    private Collection<Jogador> inicializaListJogadores(){  
         
-        Jogador j = new Jogador();
-        Patente pat = new Patente();
+        Collection<Jogador> jogadores = new ArrayList();
+        
+        //CRIACAO DOS JOGADORES
+        
+        Jogador j1 = new Jogador();
+        Arma a1 = new Arma();
+        Municao m1 = new Municao();
+        Patente p11 = new Patente();
+        Patente p12 = new Patente();
+        
+        Collection<Artefato> arts = new ArrayList();
+         
+        a1.setComprimento_cano(12.3f);
+        arts.add(a1);
+        arts.add(m1);
+        
+        j1.setArtefato(arts);
+        
+        //ADICIONANDO PATENTE
+        p11.setId(1);
+        p12.setId(2);
+        
+        j1.setPatente(p11);
+        j1.setPatente(p12);
+        
+        j1.setData_cadastro(Calendar.getInstance());
+        
+        jogadores.add(j1);
+        
+        
+        Jogador j2 = new Jogador();
+        Arma a21 = new Arma();
+        Municao m21= new Municao();
+       
  
-        j.setNickname("spam?caguei");
-        
-        pat.setCor("Rosa");
-        pat.setId(1);
-        pat.setNome("Global");
-        j.setPatente(pat);
-        
-        pat = new Patente();
-        pat.setCor("Verde");
-        pat.setId(10);
-        pat.setNome("Prata");
-        j.setPatente(pat);
-        
-        
-     
-        
-        
-        
-        
-        
-        
-        
-        jogador.add(j);
-        
        
         
-        return null;
+        jogadores.add(j2);
+     
+        
+        return jogadores;
     }
     
-    private void imprimeListJogadores(List<Object> lista){  
+    private void imprimeListJogadores(Collection<Jogador> jogadores){  
+        
+        for(Jogador j : jogadores){
+             
+            
+                  
+            //MAIS UM FOR PRA ARTEFATOS E PATENTES
+            
+            for(Patente p: j.getPatente()){
+                
+                System.out.println(p.getId());
+            }
+            for(Artefato a : j.getArtefato()){
+                System.out.println(a);
+            }
+            
+            
+        }
         
         
     }

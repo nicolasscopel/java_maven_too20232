@@ -18,7 +18,7 @@ public class Compra {
     private Float total;
             
     private Jogador jogador;
-    private Collection<ItensCompra> itenscompra;
+    private Collection<ItensCompra> itenscompra; //AGREGAÇÃO POR COMPOSICAO
 
     public Compra() {
     }

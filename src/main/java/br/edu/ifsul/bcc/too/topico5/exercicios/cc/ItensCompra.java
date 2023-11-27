@@ -14,7 +14,7 @@ public class ItensCompra {
     private String quantidade;
     private Float valor;
     
-    private Compra compra;
+    private Compra compra; // AGREGAÇÃO POR COMPOSIÇÃO
     
     private Artefato artefato;
 
