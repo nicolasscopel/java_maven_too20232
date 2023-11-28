@@ -4,6 +4,8 @@
  */
 package br.edu.ifsul.bcc.too.avaliacao.segundaetapa.questao1.model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 /**
@@ -35,6 +37,29 @@ public class Funcionario extends Pessoa{
 
     public void setData_admissao(Calendar data_admissao) {
         this.data_admissao = data_admissao;
+    }
+    
+    public String getData_admissao_string(){
+        if(this.data_admissao != null){
+             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+             return sdf.format(this.data_admissao.getTime());
+         }else{
+             return null;
+         }
+    }
+    
+     public void setData_admissao_string(String data_admissao) {
+        if(data_admissao != null){
+            try {
+                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                Calendar c = Calendar.getInstance();                
+                c.setTime(sdf.parse(data_admissao));
+                this.data_admissao = c;
+            } catch (ParseException ex) {
+                this.data_admissao = null;
+            }
+        }
+       
     }
 
     public Calendar getData_demissao() {

@@ -4,6 +4,8 @@
  */
 package br.edu.ifsul.bcc.too.avaliacao.segundaetapa.questao1.model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 /**
@@ -48,8 +50,34 @@ public class Veiculo {
         return data_ultimo_servico;
     }
 
+    
     public void setData_ultimo_servico(Calendar data_ultimo_servico) {
         this.data_ultimo_servico = data_ultimo_servico;
+    }
+    
+    
+    //GET AND SETTER PARA RECEBER A DATA EM STRING E MANIPULAR FORA DO CODIGO 
+    public String getData_ultimo_servico_string() {
+        
+       if(this.data_ultimo_servico != null){
+             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+             return sdf.format(this.data_ultimo_servico.getTime());
+         }else{
+             return null;
+         }
+    }
+
+    public void setData_ultimo_servico_string(String data_ultimo_servico) {
+       if(data_ultimo_servico != null){
+            try {
+                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                Calendar c = Calendar.getInstance();                
+                c.setTime(sdf.parse(data_ultimo_servico));
+                this.data_ultimo_servico = c;
+            } catch (ParseException ex) {
+                this.data_ultimo_servico = null;
+            }
+        }
     }
     
     
