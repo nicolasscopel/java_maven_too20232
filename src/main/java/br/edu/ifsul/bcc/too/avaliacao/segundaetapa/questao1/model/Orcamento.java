@@ -4,6 +4,8 @@
  */
 package br.edu.ifsul.bcc.too.avaliacao.segundaetapa.questao1.model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Collection;
 
@@ -89,6 +91,30 @@ public class Orcamento {
 
     public void setFuncionario(Funcionario funcionario) {
         this.funcionario = funcionario;
+    }
+    
+    //GET AND SETTER PARA RECEBER A DATA EM STRING E MANIPULAR FORA DO CODIGO 
+    public String getData_string() {
+        
+       if(this.data != null){
+             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+             return sdf.format(this.data.getTime());
+         }else{
+             return null;
+         }
+    }
+
+    public void setData_string(String data) {
+       if(data != null){
+            try {
+                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                Calendar c = Calendar.getInstance();                
+                c.setTime(sdf.parse(data));
+                this.data = c;
+            } catch (ParseException ex) {
+                this.data = null;
+            }
+        }
     }
     
     
